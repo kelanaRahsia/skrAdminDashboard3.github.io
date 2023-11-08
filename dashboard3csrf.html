@@ -1,27 +1,40 @@
-// Create a new XMLHttpRequest object
-var xhr = new XMLHttpRequest();
+<html>
+<head>
+  <script>
+    // Your JavaScript code goes here
+    // Create a new XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+    
+    // Define the URL and HTTP method
+    var url = 'http://127.0.0.1/addadmin.php';
+    var method = 'POST';
+    
+    // Create the data to be sent as a form-urlencoded string
+    var params = 'username=mir&password=mir';
+    
+    // Open a new request
+    xhr.open(method, url, true);
+    
+    // Set the Content-Type header for a form-urlencoded request
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Set up a function to handle the response
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Request was successful, handle the response here
+        console.log(xhr.responseText);
+      }
+    };
+    
+    // Send the request with the parameters
+    xhr.send(params);
+  </script>
+</head>
+<body>
+  <h1>kakiku</h1>
+</body>
+</html>
 
-// Define the URL and HTTP method
-var url = 'http://127.0.0.1/addadmin.php';
-var method = 'POST';
 
-// Create the data to be sent as a form-urlencoded string
-var params = 'username=mir&password=mir';
 
-// Open a new request
-xhr.open(method, url, true);
-
-// Set the Content-Type header for a form-urlencoded request
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-// Set up a function to handle the response
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    // Request was successful, handle the response here
-    console.log(xhr.responseText);
-  }
-};
-
-// Send the request with the parameters
-xhr.send(params);
 

